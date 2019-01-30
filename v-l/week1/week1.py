@@ -6,8 +6,6 @@ Created on Wed Jan  9 15:04:02 2019
 
 tagging along with http://neuralnetworksanddeeplearning.com/chap1.html
 """
-import sys
-sys.path.append(r'C:\Users\V.lous\Documents\ASUS WebStorage\DeepLearningStudy\neural-networks-and-deep-learning-master\neural-networks-and-deep-learning-master\data')
 import mnist_loader
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 
@@ -26,8 +24,12 @@ net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
 Try creating a network with just two layers - an input and an output layer, no hidden layer 
 - with 784 and 10 neurons, respectively. Train the network using stochastic gradient descent. 
 What classification accuracy can you achieve? 
+
+epochs, minibatch, learn rate, accuracy
+30, 10, 3.0: 75%
+30, 10, 1.0: 76%
 '''
 
 net = network.Network([784, 10]) #no hidden layer
-net.SGD(training_data, 30, 10, 3.0, test_data=test_data) 
+net.SGD(training_data, 30, 10, 1.0, test_data=test_data) 
 
